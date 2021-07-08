@@ -27,6 +27,9 @@ private static Scanner sc = new Scanner(System.in);
 
     }
     public static void borrarMensaje(){
+        System.out.println("ingrese el ID del mensaje a borrar");
+        int idABorrar=sc.nextInt();
+        MensajeDAO.borrarMensaje(idABorrar);
 
     }
     public static void editarMensaje(){

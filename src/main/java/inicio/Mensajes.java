@@ -5,7 +5,7 @@ public class Mensajes {
     String mensaje;
     String autor;
     int id;
-    String fecha;
+
 
     public String getMensaje() {
         return mensaje;
