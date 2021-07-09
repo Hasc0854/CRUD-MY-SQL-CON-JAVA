@@ -34,5 +34,15 @@ private static Scanner sc = new Scanner(System.in);
     }
     public static void editarMensaje(){
 
+        System.out.println("ingrese el nuevo mensaje");
+        String mensaje=sc.nextLine();
+        System.out.println("ingrese el id del mensaje actualizar");
+        int idActualizar=sc.nextInt();
+
+        Mensajes actualizacio = new Mensajes();
+        actualizacio.setId(idActualizar);
+        actualizacio.setMensaje(mensaje);
+
+        MensajeDAO.editarMensaje(actualizacio);
     }
 }

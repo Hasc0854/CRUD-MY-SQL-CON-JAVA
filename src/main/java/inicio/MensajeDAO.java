@@ -60,5 +60,19 @@ public class MensajeDAO {
         }
     }
     public static void editarMensaje(Mensajes mensaje) {
+        try (Connection conexion = dbConection.get_connection()){
+            PreparedStatement psUpDate=null;
+            String query="UPDATE mensajes SET mensaje = ? WHERE id_mensaje = ?";
+
+            psUpDate=conexion.prepareStatement(query);
+            psUpDate.setString(1,mensaje.getMensaje());
+            psUpDate.setInt(2,mensaje.getId());
+            psUpDate.executeUpdate();
+            System.out.println("mensaje actualizado");
+
+
+        }catch(SQLException exec){
+            System.out.println(exec);
+        }
     }
 }
